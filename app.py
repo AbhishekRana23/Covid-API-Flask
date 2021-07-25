@@ -14,7 +14,7 @@ def home():
 @app.route('/all')
 def getall():
     allcovid = covid.get_data()
-    return jsonify({"query": "All", "Data": str(allcovid)})
+    return jsonify(allcovid)
   
 @app.route('/<countryname>')
 def covidbycountry(countryname):
