@@ -1,9 +1,10 @@
 from flask import Flask , jsonify
 from covid import Covid
+from flask_cors import CORS
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
-
+CORS(app)
 covid = Covid(source="worldometers")
 
 @app.route('/')
